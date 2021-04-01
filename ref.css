@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+   
+    
+}
+header{
+    width: 100%;
+    height: 70px;
+    background:#0082e6;
+    font-size: 1.5rem;
+    color: #fff;
+}
+header .container{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    font-size: 2rem;
+}
+nav{
+    text-transform: uppercase;
+}
+ul li,ul{
+    display:inline-block;
+}
+ul li a{
+    padding: 10px; 
+    transition: 1s;
+}
+ul li a.active,ul li a:hover{
+    
+    background: rgb(49, 98, 117);
+    border-radius: 5px;
+}
+.checkbtn{
+    float: right;
+    width: 40px;
+    height: 50px;
+    cursor: pointer;
+    align-items: center;
+    float: right;
+    display: none;
+
+}
+ #check{
+    display: none;
+}
+ .checkbtn .toggle,.checkbtn .toggle::before,.checkbtn .toggle::after{
+    width: 100%;
+    height: 3px;
+    display: block;
+    background: #fff;
+    position: relative;
+    content: ""; 
+}
+ .checkbtn .toggle::before{
+    top:-17px
+}
+.checkbtn .toggle::after{
+    top: 15px;
+}
+
+@media only screen and (max-width:840px){
+    header .logo,header nav{
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width:670px){
+    header .logo{
+        font-size: 2rem;
+    }
+    .checkbtn{
+        display: flex;
+    }
+    #check:checked~nav{
+        left: 0; 
+    }
+    nav{
+        position: absolute;
+        top: 70px;
+        left: -200%;
+        width: 100%;
+        bottom: 0;
+        background: #2c3e50;
+        text-align: center; 
+        transition: 0.7s;
+    }
+   
+    ul li {
+        margin-top: 50px; 
+        display: block;
+    }
+    ul li a.active,ul li a:hover{
+        color: #0082e6;
+        background: transparent;
+    }
+
+   
+}
